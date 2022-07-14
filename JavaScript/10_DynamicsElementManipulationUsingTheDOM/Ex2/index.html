@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one" onclick="alert('Ouch. Stop it!')">Don't click</div>
+    <div id="two" onclick="stop('')">Don't click</div>
+    <div id="three">Don't click</div>
+    <button onclick="reveal(this)">Click me</button>
+    <script>
+        function stop() {
+            prompt('Ouch. Stop it!');
+        }
+        document.getElementById("three").onclick = function () {
+            confirm('Ouch. Stop it!');
+        }
+        function reveal(param) {
+            console.log(param.textContent = "Im Clicked");
+            param.style = "color: white; background-color: green";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to move the last three characters to the start of a gicen string. The string length must be 3.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+    <h2>Show edited string:</h2>
+    <table id="showString" class="table table-striped">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Original String</th>
+            <th scope="col">Edited String</th>
+        </tr>
+        <tr>
+            <th scope="row">1</th>
+            <th>Education</th>
+            <th>ionEducat</th>
+        </tr>
+    </table>
+    <script>
+        let myTable = document.getElementById("showString");
+        let counter = 1;
+
+        function addRow(orgString, editString) {
+            let row = document.createElement("tr");
+          
+            let rowHeader = document.createElement("th");
+            rowHeader.setAttribute("scope", "row");
+            rowHeader.innerText = counter;
+            counter++;
+
+            let rowOrgString = document.createElement("td");
+            rowOrgString.innerText = editString;
+
+            let rowEditedString = document.createElement("td");
+            rowEditedString.innerText = editString;
+
+            row.appendChild(rowOrgString);
+            row.appendChild(rowEditedString);
+            row.appendChild(rowHeader);
+            myTable.appendChild(row);
+            
+        }
+
+        function moveCharacter(str = "") {
+            if (str.length >= 3) {
+                console.log(str.slice(str.length - 3 + str.slice(0, str.length - 3)));
+            }
+        }
+        moveCharacter("string1")
+        addRow("string1", "string2");
+    </script>
+</body>
+</html>
